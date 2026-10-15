@@ -27,8 +27,10 @@ function draw() {
   //   }
 
   for (let ball of balls) {
-    ball.move(random(0, 5));
-    ball.show();
+    // ball.move(random(0, 10));
+    // ball.changeSize(random(0, 10));
+    // ball.show();
+    ball.change(5);
   }
   //   myBall.move(); // the sequence of the functions are whatever we defined in the class
   //   myBall.show();
@@ -45,6 +47,14 @@ class Ball {
     this.y = y;
     this.color = c;
     this.r = r;
+  }
+  change(byHowMuch) {
+    this.changeSize(byHowMuch);
+    this.move(byHowMuch);
+    this.show();
+  }
+  changeSize(byHowMuch) {
+    this.r = this.r + random(-byHowMuch, byHowMuch);
   }
   ///methods are functions defined for a class
   /// Methods can also take attributes, like move(byHowMuch)

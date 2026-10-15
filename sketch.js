@@ -1,6 +1,6 @@
 // Create an array to put all the balls in it
 let balls = [];
-let numberOfBalls = 5000;
+let numberOfBalls = 10;
 //let myBall2;
 
 // Object-orintaed programming
@@ -27,7 +27,7 @@ function draw() {
   //   }
 
   for (let ball of balls) {
-    ball.move();
+    ball.move(random(0, 5));
     ball.show();
   }
   //   myBall.move(); // the sequence of the functions are whatever we defined in the class
@@ -47,10 +47,11 @@ class Ball {
     this.r = r;
   }
   ///methods are functions defined for a class
+  /// Methods can also take attributes, like move(byHowMuch)
 
-  move() {
-    this.x += random(-5, 5);
-    this.y += random(-5, 5);
+  move(byHowMuch) {
+    this.x += random(-byHowMuch, byHowMuch);
+    this.y += random(-byHowMuch, byHowMuch);
   }
 
   show() {
